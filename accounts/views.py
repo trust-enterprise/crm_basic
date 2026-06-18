@@ -4,15 +4,12 @@ from django.http import HttpResponse
 
 
 def home(request):
-    return HttpResponse("Home page")
+    return render(request, "accounts/dashboard.html")
 
 
-def contact(request):
-    return HttpResponse("Contact page")
+def customer(request):
+    return render(request, "accounts/customer.html")
 
 
-urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("", home),
-    path("about/", contact),
-]
+def products(request):
+    return render(request, "accounts/product.html")
